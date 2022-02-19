@@ -5,6 +5,7 @@
 # ##############################################################################
 # 20220217, In Kyu Lee, v0a
 # - [Update] Output_Subj_Amount_whole -> Output_Subj_Img1_Img2_Amount_whole
+# - [Removed] progress print out
 # ##############################################################################
   Subj=$1
   Img1=$2
@@ -24,9 +25,9 @@
   while read -r ID PareID Length Diameter x_start y_start z_start x_end y_end z_end Gene Horsf Str Flag Lobe RefID rV Vol0 Vol1 Vol2 ; do
     printf "%8s%8s %15s%15s%15s%15s%15s%15s%15s%15s %5s%5s%5s%5s%5s%5s %15s%15s%15s\n" $ID $PareID $Length $Diameter $x_start $y_start $z_start $x_end $y_end $z_end $Gene $Horsf $Str $Flag $Lobe $RefID $rV $Vol1 $Vol0 >> $OutputAmountWholeDat
 #   ((ii++))
-    if [ $(echo "${ID}%100" |bc ) = 0 ]; then
-      printf "%15s\n" $ID
-    fi
+#   if [ $(echo "${ID}%100" |bc ) = 0 ]; then
+#     printf "%15s\n" $ID
+#   fi
   done
 
   exec <&0
