@@ -14,9 +14,8 @@ do
     Img1=${STR_ARRAY[2]}
     Img2=${STR_ARRAY[3]}
 
-    ./${Script} ${Subj} ${Img1} ${Img2} &> monit_VentToAmount_${Img1}_${Img2}.out
+    ./${Script} ${Subj} ${Img1} ${Img2} 
 
   done
   cd ../..
-  break
 done

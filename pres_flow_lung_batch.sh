@@ -20,7 +20,7 @@
 CODE_DIR=$HOME/mbin/Shin_Codes/fluid1d/exes
 PREP_EXE=prep_pres_flow_lung.exe
 PRES_EXE=pres_flow_lung.exe
-PRES_SH=pres_flow_lung_v1b.sh
+PRES_SH=pres_flow_lung_batch.sh
 INP_DIR=data_input
 OUTP_DIR=data_output
 MESH1D_DIR=data_mesh1D
@@ -30,9 +30,9 @@ XFLX_DIR=data_xflx
 # Arguments
 # ---------
 Subj=$1
-Img0=$2
-Img1=$3
-Weight=$4
+Img1=$2
+Img2=$3
+V_tidal=$4
 Height=$5
 Age=$6
 Gender=$7
@@ -50,7 +50,7 @@ Gender=$7
 # --------------------------------------
 # file=Output_H17293_Amount_whole_as.dat  # 1D mesh
 # file=Output_50052_TLC0_RV0_Amount_whole.dat  # 1D mesh
-  file=Output_${Subj}_${Img0}_${Img1}_Amount_whole.dat  # 1D mesh
+  file=Output_${Subj}_${Img1}_${Img2}_Amount_whole.dat  # 1D mesh
 # --------------------------------------
 # 1D mesh for <get_stats> = 1
   fileStatApollo=Output_MSM4D-013_Amount_Ap_Opt0_whole.dat  # Not used
@@ -77,7 +77,7 @@ Gender=$7
 # -----------------
   tperiod=4.80       # Breathing period (s)  # only for <i_wform>=1
 # -----------------
-  v_tidal=${Weight}  # Tidal volume (m^3)
+  v_tidal=${V_tidal}  # Tidal volume (m^3)
 # -----------------
   i_wform=1          # 1:sin, 2:Longest breathing waveform
   time_ein=2.4       # Time to end insp. for <i_wform> = 2
