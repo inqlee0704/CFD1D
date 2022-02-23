@@ -26,7 +26,7 @@ for line in lines[3:]:
     new_lines.append(new_line)
 
 # save
-with open(f'data_plt_nd_csv/{plt_nd_file}', 'w') as f2:
+with open(f"data_plt_nd_csv/{plt_nd_file.split('.')[0]}.csv", 'w') as f2:
     for line in new_lines:
         f2.write(str(line))
 f2.close()
