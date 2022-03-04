@@ -7,7 +7,7 @@ Img2=$4
 
 for SUBJ_DIR in $(ls -d ${Proj}_*/)
 do
-  if [ -d "${SUBJ_DIR}CFD1D/${Img1}_${Img2}_${CASE_TYPE}/data_plt_nd" ]
+  if [ -f "${SUBJ_DIR}CFD1D/${Img1}_${Img2}_${CASE_TYPE}/data_plt_nd/plt_nd_000025.dat" ]
   then
     IFS='_' read -ra TEMP <<< ${SUBJ_DIR}
     Subj=${TEMP[1]:0:-1}
@@ -32,7 +32,7 @@ do
   else
     echo "File Not Found: "
     echo ----------------
-    echo ${SUBJ_DIR}CFD1D/${Img1}_${Img2}_${CASE_TYPE}/data_plt_nd 
+    echo ${SUBJ_DIR}CFD1D/${Img1}_${Img2}_${CASE_TYPE}/data_plt_nd/plt_nd_000025.dat 
     echo 
   fi
 done
