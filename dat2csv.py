@@ -1,3 +1,4 @@
+# Convert .dat to .csv format
 import sys
 
 plt_nd_file = str(sys.argv[1])
